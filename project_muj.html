@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="explore student opportunities portal by MUJ">
+    <link rel="icon" href="download.webp">
+    <link rel="stylesheet" href="style.css">
+    <title>MUJ student opportunities portal</title>
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="brand-logo">
+            <h1>NextUp</h1>
+            <h3>BY MUJ</h3>
+        </div>
+        <nav class="nav-links">
+            <a href="home.html">Home</a>
+            <a href="internships.html">Internships</a>
+            <a href="events.html">Events</a>
+            <a href="register.html">Registration link</a>
+        </nav>
+
+        <div>
+            <button class="loginsignup">Login/Sign Up</button>
+        </div>
+    </header>
+
+
+    <main>
+
+        <aside class="sidebar-filters">
+            <h2>Filters</h2> <!-- Global sidebar title -->
+
+            <!-- Group 1: Type -->
+            <fieldset class="filter-group">
+                <legend>Type</legend>
+                <div class="filter-option">
+                    <input type="checkbox" id="filter-intern">
+                    <label for="filter-intern">Internships</label>
+                </div>
+                <div class="filter-option">
+                    <input type="checkbox" id="hackathon">
+                    <label for="hackathon">Hackathons</label>
+                </div>
+                <div class="filter-option">
+                    <input type="checkbox" id="jobs">
+                    <label for="jobs">Jobs</label>
+                </div>
+            </fieldset>
+
+            <!-- Group 2: Location -->
+            <fieldset class="filter-group">
+                <legend>Location</legend>
+                <div class="filter-option">
+                    <input type="checkbox" id="remote">
+                    <label for="remote">Remote</label>
+                </div>
+                <div class="filter-option">
+                    <input type="checkbox" id="on">
+                    <label for="on">On-site</label>
+                </div>
+                <div class="filter-option">
+                    <input type="checkbox" id="hybrid">
+                    <label for="hybrid">Hybrid</label>
+                </div>
+            </fieldset>
+
+            <!-- Group 3: Stipend Range -->
+            <fieldset class="filter-group">
+                <legend>
+                    <label for="stipend">Stipend Range: ₹0K - ₹100K</label>
+                </legend>
+                <div class="filter-option">
+                    <input type="range" min="0" max="100000" id="stipend" name="stipend">
+                </div>
+            </fieldset>
+        </aside>
+
+
+
+        <div class="main-content">
+            <div>
+                <label for="search">Search opportunities</label>
+                <input type="search" name="query" placeholder="Search opportunities, companies, skills" id="search">
+            </div>
+
+            <section>
+                <h2>Latest opportunities</h2>
+
+                <div class="opportunities">
+                    <article class="opportunity-card">
+                        <span class="badge">NEW</span>
+                        <h3>Frontend Developer Intern</h3>
+                        <p>Company: ABC Technologies</p>
+                        <p>Deadline: 30 October 2026</p>
+                        <p>learn frontend develoment by building web applications</p>
+                        <a href="frontend_details.html">View Details</a>
+                    </article>
+
+                    <article class="opportunity-card">
+                        <h3>AI/ML Hackathon</h3>
+                        <p>participate in a technical competition and solve real world problems</p>
+                        <a href="aiml.html">View Details</a>
+                    </article>
+
+                    <article class="opportunity-card">
+                        <h3>Data analyst intern</h3>
+                        <p>analyse large datasets to denote business insights. work with cross functional..</p>
+                        <a href="data-analyst-intern.html">View details</a>
+                    </article>
+
+                    <article class="opportunity-card">
+                        <h3>UI/UX Design intern</h3>
+                        <p>design delightful user experience for millions of food lovers across india</p>
+                        <a href="uiux.html">view details</a>
+                    </article>
+
+                    <article class="opportunity-card">
+                        <h3>Smart India Hackathon 2025</h3>
+                        <p>Solve real world problems faced by government</p>
+                        <a href="hackathon.html">view details</a>
+                    </article>
+
+                    <article class="opportunity-card">
+                        <h3>Backend developer Intern</h3>
+                        <p>Build robust payment infrastructure used by 8M+ business in India</p>
+                        <a href="Backend.html">view details</a>
+                    </article>
+
+
+                </div>
+
+            </section>
+
+            <section>
+                <h2>Skills to learn</h2>
+
+                <ul>
+                    <li>HTML and CSS</li>
+                    <li>Javascript</li>
+                    <li>Git and GitHub</li>
+                    <li>Problem-solving</li>
+                </ul>
+
+            </section>
+            <h2>Application Deadlines</h2>
+
+            <div class="table-wrapper">
+                <table>
+                    <caption>Upcoming opportunity deadlines</caption>
+                    <thead>
+                        <tr>
+                            <th>Opportunity</th>
+                            <th>Eligibility</th>
+                            <th>Deadline</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>Frontend Intern</td>
+                            <td>2nd year and above</td>
+                            <td>15 november 2026</td>
+                        </tr>
+
+                        <tr>
+                            <td>AI/ML hackathon</td>
+                            <td>All cse students</td>
+                            <td>20 November 2026</td>
+                        </tr>
+
+                        <tr>
+                            <td>Web development workshop</td>
+                            <td>All students</td>
+                            <td>25 november 2026</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+            <form action="process.php" method="post">
+                <fieldset>
+                    <legend>Registartion Form</legend>
+                    <div>
+                        <label for="name">Enter your name</label>
+                        <input type="text" name="username" placeholder="Enter your name" required minlength="3"
+                            maxlength="200" id="name">
+                    </div>
+
+                    <div>
+                        <label for="email">Enter your email</label>
+                        <input type="email" name="email" id="email" required placeholder="enter your email"
+                            autocomplete="email">
+                    </div>
+
+                    <div>
+                        <label for="year">select your year</label>
+                        <select name="academic-year" id="year" required>
+                            <option value="" disabled selected>Select your year</option>
+                            <option value="1st year">1st year</option>
+                            <option value="2nd year">2nd year</option>
+                            <option value="3rd year">3rd year</option>
+                            <option value="4th year">4th year</option>
+                        </select>
+                    </div>
+
+
+                    <fieldset>
+                        <legend>Preferred field</legend>
+                        <input type="radio" value="Web-developmet" name="field" id="web">
+                        <label for="web">Web-development</label>
+                        <br>
+                        <input type="radio" value="Aiml" name="field" id="ai">
+                        <label for="ai">AI/ML</label>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Interests</legend>
+                        <input type="checkbox" name="interest" value="internships" id="intern">
+                        <label for="intern">Internships</label>
+                        <br>
+                        <input type="checkbox" name="interest" value="Hackathon" id="hack">
+                        <label for="hack">Hackathon</label>
+
+                    </fieldset>
+
+                    <div>
+                        <button type="submit">Submit</button>
+                    </div>
+
+                </fieldset>
+            </form>
+
+            <details>
+                <summary>Do I need prior experience to participate?</summary>
+                <p>No, you do not need any kind of experience a fresher candidate can apply.</p>
+            </details>
+
+    </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 muj student events portal</p>
+    </footer>
+</body>
+
+</html>

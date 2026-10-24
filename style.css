@@ -1,0 +1,292 @@
+/* ==========================================
+   GLOBAL STYLES & LAYOUT SYSTEM
+   ========================================== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #222;
+    line-height: 1.5;
+    background-color: #ffffff;
+}
+
+/* ==========================================
+   NAVIGATION BAR (DESKTOP FIRST)
+   ========================================== */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 24px;
+    background-color: #fcfbf7;
+    border-bottom: 1px solid #e0e0e0;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    z-index: 1000;
+}
+
+.brand-logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2px;
+}
+
+h1 {
+    color: #2D3748;
+    font-size: 32px;
+    margin: 0;
+    line-height: 1.1;
+}
+
+h3 {
+    color: #2D3748;
+    font-size: 1rem;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.nav-links {
+    display: flex;
+    gap: 60px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.nav-links a {
+    color: #4a4a4a;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: #0052a3;
+}
+
+.loginsignup {
+    background-color: #0066cc;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 16px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border: none;
+}
+
+/* ==========================================
+   MAIN CORE CONTENT PANELS (DESKTOP FIRST)
+   ========================================== */
+main {
+    display: grid;
+    grid-template-columns: 260px minmax(0, 1fr);
+    grid-template-areas: "filters content";
+    gap: 40px; /* Expanded grid gap so content sits comfortably away from filter edge */
+    align-items: start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 120px 16px 0px 16px;
+}
+
+main > aside {
+    grid-area: filters;
+}
+
+.main-content {
+    grid-area: content;
+    min-width: 0;
+}
+
+/* ==========================================
+   EXACT SIDEBAR FILTER STYLING
+   ========================================== */
+.sidebar-filters {
+    position: fixed;
+    top: 120px;
+    left: calc((100vw - 1200px) / 2 + 16px);
+    width: 260px;
+    height: calc(100vh - 120px);
+    background-color: #ffffff;
+    border-right: 1px solid #e5e7eb;
+    padding: 24px 20px 24px 0px; /* Reduced right padding space to optimize element fit */
+    box-sizing: border-box;
+    overflow-y: auto;
+    z-index: 900;
+}
+
+@media (max-width: 1200px) {
+    .sidebar-filters {
+        left: 16px;
+    }
+}
+
+.sidebar-filters h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 20px 0;
+    color: #1f2937;
+}
+
+.filter-group {
+    border: none;
+    border-bottom: 1px solid #f3f4f6;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px 0;
+    margin: 0;
+}
+
+.filter-group:last-child {
+    border-bottom: none;
+}
+
+.filter-group legend {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #1f2937;
+    padding: 0;
+    margin-bottom: 6px;
+    text-transform: capitalize;
+}
+
+.filter-group legend label[for="stipend"] {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #1f2937;
+    cursor: pointer;
+}
+
+.filter-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: #4b5563;
+    cursor: pointer;
+    line-height: 1.2;
+}
+
+.filter-option input[type="checkbox"] {
+    margin: 0;
+    cursor: pointer;
+}
+
+.filter-option input[type="range"] {
+    width: 100%;
+    margin: 4px 0 0 0;
+}
+
+/* ==========================================
+   CARD PATTERNS & OPPORTUNITY GRID OPTIONS
+   ========================================== */
+.opportunities {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.opportunity-card {
+    position: relative;
+    background-color: #fdfbf7;
+    border: 2px solid gray;
+    padding: 24px;
+    border-radius: 8px;   
+}
+
+.opportunity-card:hover {
+    border-color: purple;
+}
+
+.badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: inline-block;
+    background-color: green;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+}
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+/* ==========================================
+   FORM CONTROLS FALLBACK
+   ========================================== */
+form input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+form select,
+form button {
+    max-width: 100%;
+}
+
+form input[type="text"],
+form input[type="email"],
+form select {
+    width: 100%;
+}
+
+/* ==========================================
+   COMPACT RESPONSIVE PHONE VIEW ENGINE 📱
+   ========================================== */
+@media (max-width: 768px) {
+    /* 1. Reset navbar flow context so it wraps cleanly without overlapping tags */
+    .navbar {
+        position: static;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        padding: 16px;
+    }
+
+    .brand-logo {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .nav-links {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .loginsignup {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* 2. Convert standard desktop multi-column layouts into stack layers */
+    main {
+        display: flex;
+        flex-direction: column;
+        padding: 20px 16px;
+        gap: 24px;
+    }
+
+    /* 3. Re-flow fixed sidebar elements back safely to block-level alignment flows */
+    .sidebar-filters {
+        position: static;
+        width: 100%;
+        height: auto;
+        padding: 16px 0;
+        border-right: none;
+        border-bottom: 1px solid #e5e7eb;
+    }
+
+    .main-content {
+        width: 100%;
+    }
+}
